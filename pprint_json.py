@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
-
 import json
 import sys
 
 
 def load_data(filepath):
-    f = open(filepath, "r")
-    raw_data = f.read()
+    input_file = open(filepath, "r")
+    raw_data = input_file.read()
     try:
         return json.loads(raw_data)
     except ValueError:
@@ -14,8 +12,8 @@ def load_data(filepath):
         raise SystemExit
 
 
-def pretty_print_json(data):
-    return json.dumps(data, indent=4, sort_keys=True)
+def pretty_print_json(json_data):
+    return json.dumps(json_data, indent=4, sort_keys=True)
 
 
 if __name__ == '__main__':
