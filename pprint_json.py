@@ -21,5 +21,8 @@ def pretty_json(json_data):
 
 
 if __name__ == '__main__':
-    filepath = sys.argv[1]
-    print(pretty_json(load_data(filepath)))
+    if len(sys.argv) > 1:
+        filepath = sys.argv[1]
+        print(pretty_json(load_data(filepath)))
+    else:
+        print('No JSON data to prettify')
